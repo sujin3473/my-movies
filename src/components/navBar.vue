@@ -4,7 +4,7 @@
 			<v-app-bar-title class="text-uppercase grey--text">
 				My Movies
 			</v-app-bar-title>
-			<router-link to="/">
+			<router-link to="/home">
 				<v-icon>home</v-icon>
 			</router-link>
 			| <router-link to="/myMovies">my Movies</router-link> |
