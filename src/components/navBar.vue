@@ -1,16 +1,17 @@
 <template>
-	<nav>
-		<v-app-bar app prominent dark color="deep-purple lighten-2">
-			<v-app-bar-title class="text-uppercase grey--text">
-				My Movies
-			</v-app-bar-title>
-			<router-link to="/home">
-				<v-icon>home</v-icon>
-			</router-link>
-			| <router-link to="/myMovies">my Movies</router-link> |
-			<router-link to="/searchMovie">search movie</router-link>
-		</v-app-bar>
-	</nav>
+	<div>
+		<b-navbar type="dark" variant="warning">
+			<b-navbar-brand tag="h1" to="/home">
+				Movie Wishes
+			</b-navbar-brand>
+			<b-collapse id="nav-collapse" is-nav>
+				<b-navbar-nav>
+					<b-nav-item to="/myMovies">wish list</b-nav-item>
+					<b-nav-item to="/searchMovie">search movie</b-nav-item>
+				</b-navbar-nav>
+			</b-collapse>
+		</b-navbar>
+	</div>
 </template>
 
 <script>

@@ -1,17 +1,22 @@
 <template>
 	<div>
 		<h1>searchMovie</h1>
-		<v-form align="center">
-			<v-row>
-				<v-col md="6">
-					<v-text-field v-model="query" label="영화를 검색하세요." />
-				</v-col>
-				<v-col>
-					<v-btn @click="fetchData">검색</v-btn>
-				</v-col>
-			</v-row>
-		</v-form>
-		<movie-list-item></movie-list-item>
+		<div>
+			<input
+				type="text"
+				v-model="query"
+				@keyup.enter="fetchData"
+				label="영화를 검색하세요."
+			/>
+			<button @click="fetchData">검색</button>
+		</div>
+		<div class="movies">
+			<movie-list-item
+				v-for="movieItem in movieItems"
+				:movieItem="movieItem"
+				:key="movieItem.link"
+			></movie-list-item>
+		</div>
 	</div>
 </template>
 
@@ -25,11 +30,12 @@ export default {
 	},
 	data: () => ({
 		query: '',
-		movieList: [],
+		movieItems: [],
 	}),
 	methods: {
 		async fetchData() {
 			const { data } = await fetchMovies(this.query);
+			this.movieItems = data.items;
 			console.log(data.items);
 		},
 	},

@@ -1,10 +1,8 @@
 <template>
-	<v-app>
+	<div class="app">
 		<nav-bar />
-		<v-content style="background-color: #F8F8FF">
-			<router-view />
-		</v-content>
-	</v-app>
+		<router-view />
+	</div>
 </template>
 
 <script>
@@ -18,4 +16,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+@import './css/common.css';
+</style>
