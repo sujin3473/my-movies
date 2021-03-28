@@ -1,6 +1,6 @@
 <template>
 	<div>
-		home
+		<h1 class="page-header">Now showing</h1>
 	</div>
 </template>
 

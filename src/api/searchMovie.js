@@ -12,7 +12,7 @@ function fetchMovies(value) {
 		},
 		params: {
 			query: value,
-			display: 20,
+			display: 12,
 		},
 	});
 }
