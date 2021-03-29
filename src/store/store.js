@@ -28,5 +28,14 @@ export default new Vuex.Store({
 			localStorage.setItem(title, JSON.stringify(obj));
 			state.wishMovies.push(obj);
 		},
+		toggleComplete(state, movie) {
+			state.wishMovies[movie.index].completed = !state.todoItems[movie.index]
+				.completed;
+			localStorage.removeItem(movie.movieItem.item);
+			localStorage.setItem(
+				movie.movieItem.item,
+				JSON.stringify(movie.movieItem),
+			);
+		},
 	},
 });

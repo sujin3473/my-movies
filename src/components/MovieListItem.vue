@@ -1,7 +1,12 @@
 <template>
 	<li class="d-flex">
 		<a :href="movieItem.link">
-			<img :src="movieItem.image" alt="image" />
+			<template v-if="movieItem.image !== ''">
+				<img :src="movieItem.image" alt="image" />
+			</template>
+			<template v-else>
+				<img src="../../public/altImage.png" />
+			</template>
 		</a>
 		<div class="movie-data d-flex flex-column bd-highlight mb-3">
 			<span class="add mb-auto p-2" align="right">

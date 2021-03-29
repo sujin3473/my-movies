@@ -1,5 +1,5 @@
 # my-movies
-movie search & record website
+movie search & wish list website
 
 
-Using - Vue.js / Vuetify / Vuex / Axios / Naver api
+Using - Vue.js / Vuex / Axios / Naver api

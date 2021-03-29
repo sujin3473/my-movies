@@ -15,3 +15,23 @@
   background: white;
   border-radius: 5px;
 }
+
+.removeBtn {
+  margin-left: auto;
+  color: #de4343;
+  cursor: pointer;
+  padding-top: 13px;
+  font-size: 1.3rem;
+}
+
+.checkBtn {
+  color: #62acde;
+  cursor: pointer;
+  padding-top: 13px;
+  font-size: 1.3rem;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+  color: #b3adad;
+}
