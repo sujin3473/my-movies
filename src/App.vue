@@ -1,7 +1,7 @@
 <template>
 	<div class="app">
 		<nav-bar />
-		<div>
+		<div class="app-contents">
 			<router-view />
 		</div>
 	</div>
@@ -21,5 +21,6 @@ export default {
 <style>
 @import './css/common.css';
 @import './css/search.css';
+@import './css/wishes.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div class="contents">
-		<h1 class="page-header">Search a movie</h1>
+		<h1 class="page-header">I want to search...</h1>
 		<b-input-group size="lg" class="input-container">
 			<b-form-input
 				v-model="query"
@@ -10,7 +10,7 @@
 			</b-form-input>
 			<b-input-group-append>
 				<b-button>
-					<ion-icon name="search"></ion-icon>
+					<ion-icon name="search" class="search-icon"></ion-icon>
 				</b-button>
 			</b-input-group-append>
 		</b-input-group>

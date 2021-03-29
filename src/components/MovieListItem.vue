@@ -1,12 +1,15 @@
 <template>
 	<li class="d-flex">
-		<img :src="movieItem.image" alt="image" />
+		<a :href="movieItem.link">
+			<img :src="movieItem.image" alt="image" />
+		</a>
 		<div class="movie-data d-flex flex-column bd-highlight mb-3">
 			<span class="add mb-auto p-2" align="right">
 				<ion-icon
 					v-b-tooltip.hover
 					title="add to wish list"
 					:name="this.iconName"
+					@click="addMovieWish"
 				></ion-icon>
 			</span>
 			<span align="right" v-html="movieItem.title"></span>
@@ -26,8 +29,15 @@ export default {
 	},
 	data: () => ({
 		iconName: 'heart-outline',
+		newMovieWish: '',
 	}),
-	computed: {},
+	methods: {
+		addMovieWish() {
+			this.iconName = 'heart';
+			this.$store.commit('addMovieWish', this.movieItem.title);
+			console.log(this.movieItem.title);
+		},
+	},
 };
 </script>
 

@@ -16,11 +16,11 @@ export default new VueRouter({
 		},
 		{
 			path: '/myMovies',
-			component: () => import('@/views/myMovies.vue'),
+			component: () => import('@/views/MyMovies.vue'),
 		},
 		{
 			path: '/searchMovie',
-			component: () => import('@/views/searchMovie.vue'),
+			component: () => import('@/views/SearchMovie.vue'),
 		},
 	],
 });
