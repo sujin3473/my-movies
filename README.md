@@ -1,4 +1,4 @@
-# my-movies
+# Movie Wishes
 movie search & wish list website built with [VueJS](https://vuejs.org/)
 
 
