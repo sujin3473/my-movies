@@ -3,13 +3,17 @@
 		<ion-icon
 			class="checkBtn"
 			name="checkmark-done"
-			@click="this.$store.commit('toggleComplete', { wishMovie, index })"
+			@click="toggleComplete(wishMovie)"
 		></ion-icon>
 		<span
-			:class="{ textCompleted: wishMovie.watched }"
-			v-html="wishMovie.item"
+			:class="{ textCompleted: wishMovie.wishMovie.watched }"
+			v-html="wishMovie.wishMovie.item"
 		></span>
-		<ion-icon class="removeBtn" name="trash" @click="removeMovie"></ion-icon>
+		<ion-icon
+			class="removeBtn"
+			name="trash"
+			@click="removeMovieWish(wishMovie)"
+		></ion-icon>
 	</li>
 </template>
 
@@ -22,7 +26,13 @@ export default {
 		},
 	},
 	methods: {
-		removeMovie() {},
+		removeMovieWish(payload) {
+			this.$store.commit('removeMovieWish', payload);
+		},
+		toggleComplete(payload) {
+			console.log(payload.wishMovie.item);
+			this.$store.commit('toggleComplete', payload);
+		},
 	},
 };
 </script>

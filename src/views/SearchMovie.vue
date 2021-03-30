@@ -40,7 +40,6 @@ export default {
 		async fetchData() {
 			const { data } = await fetchMovies(this.query);
 			this.movieItems = data.items;
-			console.log(data.items);
 		},
 	},
 };

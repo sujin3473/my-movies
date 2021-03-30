@@ -4,9 +4,9 @@
 		<div class="wishes">
 			<transition-group name="list" tag="ul">
 				<movie-wish-item
-					v-for="wishMovie in this.$store.state.wishMovies"
+					v-for="(wishMovie, index) in this.$store.state.wishMovies"
 					:key="wishMovie.item"
-					:wishMovie="wishMovie"
+					:wishMovie="{ wishMovie, index }"
 				></movie-wish-item>
 			</transition-group>
 		</div>

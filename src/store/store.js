@@ -9,7 +9,6 @@ const storage = {
 		if (localStorage.length > 0) {
 			for (let i = 0; i < localStorage.length; i++) {
 				if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-					console.log(JSON.parse(localStorage.getItem(localStorage.key(i))));
 					arr.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
 				}
 			}
@@ -29,13 +28,18 @@ export default new Vuex.Store({
 			state.wishMovies.push(obj);
 		},
 		toggleComplete(state, movie) {
-			state.wishMovies[movie.index].completed = !state.todoItems[movie.index]
-				.completed;
-			localStorage.removeItem(movie.movieItem.item);
+			console.log(state.wishMovies[movie.index].watched);
+			state.wishMovies[movie.index].watched = !state.wishMovies[movie.index]
+				.watched;
+			localStorage.removeItem(movie.wishMovie.item);
 			localStorage.setItem(
-				movie.movieItem.item,
-				JSON.stringify(movie.movieItem),
+				movie.wishMovie.item,
+				JSON.stringify(movie.wishMovie),
 			);
+		},
+		removeMovieWish(state, movie) {
+			localStorage.removeItem(movie.wishMovie.item);
+			state.wishMovies.splice(movie.index, 1);
 		},
 	},
 });

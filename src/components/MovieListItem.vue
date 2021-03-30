@@ -40,7 +40,6 @@ export default {
 		addMovieWish() {
 			this.iconName = 'heart';
 			this.$store.commit('addMovieWish', this.movieItem.title);
-			console.log(this.movieItem.title);
 		},
 	},
 };
