@@ -14,6 +14,7 @@
 				</b-button>
 			</b-input-group-append>
 		</b-input-group>
+		<loading-spinner v-if="isLoading"></loading-spinner>
 		<ul>
 			<movie-list-item
 				v-for="movieItem in movieItems"
@@ -27,18 +28,24 @@
 <script>
 import { fetchMovies } from '@/api/searchMovie';
 import MovieListItem from '@/components/MovieListItem.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 
 export default {
 	components: {
 		MovieListItem,
+		LoadingSpinner,
 	},
 	data: () => ({
+		isLoading: false,
 		query: '',
 		movieItems: [],
 	}),
 	methods: {
 		async fetchData() {
+			this.isLoading = true;
 			const { data } = await fetchMovies(this.query);
+			this.isLoading = false;
+
 			this.movieItems = data.items;
 		},
 	},

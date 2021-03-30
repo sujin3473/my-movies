@@ -8,11 +8,11 @@ export default new VueRouter({
 	routes: [
 		{
 			path: '/',
-			redirect: '/home',
+			redirect: '/boxOffice',
 		},
 		{
-			path: '/home',
-			component: () => import('@/views/Home.vue'),
+			path: '/boxOffice',
+			component: () => import('@/views/BoxOffice.vue'),
 		},
 		{
 			path: '/myMovies',
