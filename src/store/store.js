@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import moment from 'moment';
 
 Vue.use(Vuex);
 
@@ -17,9 +18,14 @@ const storage = {
 	},
 };
 
+const yesterday = moment()
+	.add(-1, 'days')
+	.format('YYYY-MM-DD');
+
 export default new Vuex.Store({
 	state: {
 		wishMovies: storage.fetch(),
+		yesterday: yesterday,
 	},
 	mutations: {
 		addMovieWish(state, title) {
